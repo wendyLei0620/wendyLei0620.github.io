@@ -71,6 +71,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Leetcode-88" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/05/28/Leetcode-88/" class="article-date">
+  <time class="dt-published" datetime="2025-05-28T04:45:46.000Z" itemprop="datePublished">2025-05-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/05/28/Leetcode-88/">Leetcode 88</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>You’re given two sorted integer arrays:<br>nums1, which has length m + n, where the first m elements are valid, and the last n elements are just zeros (space to hold nums2).<br>nums2, which has n sorted elements.</p>
+<p>Your task: merge nums2 into nums1 in sorted order, in-place.</p>
+<p>Example 1:<br>Input: nums1 &#x3D; [1,2,3,0,0,0], m &#x3D; 3, nums2 &#x3D; [2,5,6], n &#x3D; 3<br>Output: [1,2,2,3,5,6]<br>Explanation: The arrays we are merging are [1,2,3] and [2,5,6].<br>The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.</p>
+<p>Why Merge From Back to Front?<br>If try to merge from front to back, it’ll cause a big problem:<br>Everytime I try to insert a number at the front of nums1, I need to shift <em>every</em> folowing element to make space. To do so will result in a bad time complexity O(m × n).</p>
+<p>But to merge from back to front, we can avoid unnecessary movement. The time complecity is O(m + n).</p>
+<p>Java code:<br>p1 &#x3D; m - 1;<br>p2 &#x3D; n - 1;<br>p &#x3D; m + n - 1;</p>
+<p>while(p1 &gt;&#x3D; 0 &amp;&amp; p2 &gt;&#x3D; 0){<br>    if(nums1[p1] &gt; nums2[p2]){<br>        nums1[p] &#x3D; nums1[p1];<br>        p1–;<br>    }<br>    else{<br>        nums1[p] &#x3D; nums2[p2];<br>        p2–;<br>    }<br>    p–;<br>}<br>while(p2 &gt;&#x3D; 0){<br>    nums1[p] &#x3D; nums2[p2];<br>    p2–;<br>    p–;<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/05/28/Leetcode-88/" data-id="cmb7hgg3k0001yv8oelzn2s6u" data-title="Leetcode 88" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reverse-Two-Pointers/" rel="tag">Reverse Two Pointers</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/in-place-merge/" rel="tag">in-place merge</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Java-studynode-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/05/27/Java-studynode-1/" class="article-date">
@@ -98,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/27/Java-studynode-1/" data-id="cmb7gl4oj0000o78o2riscp4j" data-title="Java studynode(1)" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/27/Java-studynode-1/" data-id="cmb7hgg3h0000yv8oea3qdj69" data-title="Java studynode(1)" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -149,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/27/hello-world/" data-id="cmb7gl4om0001o78og8j97i8o" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/27/hello-world/" data-id="cmb7hgg3l0002yv8o11ok02fw" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -168,12 +219,33 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Leetcode/">Leetcode</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reverse-Two-Pointers/" rel="tag">Reverse Two Pointers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/in-place-merge/" rel="tag">in-place merge</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Reverse-Two-Pointers/" style="font-size: 10px;">Reverse Two Pointers</a> <a href="/tags/in-place-merge/" style="font-size: 10px;">in-place merge</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -190,6 +262,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2025/05/28/Leetcode-88/">Leetcode 88</a>
+          </li>
         
           <li>
             <a href="/2025/05/27/Java-studynode-1/">Java studynode(1)</a>
