@@ -97,11 +97,32 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>Given an array nums of size n, return the majority element.<br>The majority element is the element that appears more than n&#x2F;2 times.</p>
+<p>Example:<br>Input: nums &#x3D; [2,2,1,1,1,2,2]<br>Output: 2</p>
+<p><span style = "font-size: 20px"><b>Boyer-Moore Algorithm</b></span></p>
+<pre>```java
+int count = 0;
+int candidate = 0;
+
+for(int num : nums){
+    if(count == 0){
+        candidate = count;
+        count ++;
+    }
+    else if(num == candidate){
+        count ++;
+    }
+    else if(num != candidate){
+        count --;
+    }
+    return candidate;
+}
+</pre>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/29/Leetcode-169/" data-id="cmb8y39qg0001wwlg6r3d1zc3" data-title="Leetcode 169" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/29/Leetcode-169/" data-id="cmb8zhug500013qlgd7ff1nii" data-title="Leetcode 169" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -173,7 +194,7 @@ while(p2 >= 0){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/28/Leetcode-88/" data-id="cmb8y39qi0003wwlg5k9vaxxp" data-title="Leetcode 88" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/28/Leetcode-88/" data-id="cmb8zhug700033qlg48hf4wsf" data-title="Leetcode 88" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -218,7 +239,7 @@ while(p2 >= 0){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/27/Java-studynode-1/" data-id="cmb8y39qd0000wwlgbhh2f7uc" data-title="Java studynode(1)" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/27/Java-studynode-1/" data-id="cmb8zhug200003qlgcpy9aezf" data-title="Java studynode(1)" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -269,7 +290,7 @@ while(p2 >= 0){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/27/hello-world/" data-id="cmb8y39qj0005wwlg9r3qfonf" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/27/hello-world/" data-id="cmb8zhug900053qlg01qa75mo" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       

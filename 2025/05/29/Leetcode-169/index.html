@@ -6,13 +6,15 @@
   
   <title>Leetcode 169 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Given an array nums of size n, return the majority element.The majority element is the element that appears more than n&#x2F;2 times. Example:Input: nums &#x3D; [2,2,1,1,1,2,2]Output: 2 Boyer-Moore Al">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode 169">
 <meta property="og:url" content="http://example.com/2025/05/29/Leetcode-169/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Given an array nums of size n, return the majority element.The majority element is the element that appears more than n&#x2F;2 times. Example:Input: nums &#x3D; [2,2,1,1,1,2,2]Output: 2 Boyer-Moore Al">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-29T05:38:00.000Z">
-<meta property="article:modified_time" content="2025-05-29T05:39:34.895Z">
+<meta property="article:modified_time" content="2025-05-29T06:19:12.219Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Boyer-Moore Algorithm">
 <meta name="twitter:card" content="summary">
@@ -98,11 +100,32 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>Given an array nums of size n, return the majority element.<br>The majority element is the element that appears more than n&#x2F;2 times.</p>
+<p>Example:<br>Input: nums &#x3D; [2,2,1,1,1,2,2]<br>Output: 2</p>
+<p><span style = "font-size: 20px"><b>Boyer-Moore Algorithm</b></span></p>
+<pre>```java
+int count = 0;
+int candidate = 0;
+
+for(int num : nums){
+    if(count == 0){
+        candidate = count;
+        count ++;
+    }
+    else if(num == candidate){
+        count ++;
+    }
+    else if(num != candidate){
+        count --;
+    }
+    return candidate;
+}
+</pre>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/29/Leetcode-169/" data-id="cmb8y39qg0001wwlg6r3d1zc3" data-title="Leetcode 169" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/29/Leetcode-169/" data-id="cmb8zhug500013qlgd7ff1nii" data-title="Leetcode 169" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
