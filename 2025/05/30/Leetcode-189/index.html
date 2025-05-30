@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Java studynode(1) | Hexo</title>
+  <title>Leetcode 189 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="This is my first Hexo blog!">
+  <meta name="description" content="Given an array nums, rotate the array to the right by k steps. Cyclic ReplacementIf n is some multiplies of k, we need to track each cycle. &#96;&#96;&#96;java n &#x3D; nums.length(); k &#x3D; k % n; &#x2F;&#x2F; a conmmon trick use">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java studynode(1)">
-<meta property="og:url" content="http://example.com/2025/05/27/Java-studynode-1/index.html">
+<meta property="og:title" content="Leetcode 189">
+<meta property="og:url" content="http://example.com/2025/05/30/Leetcode-189/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="This is my first Hexo blog!">
+<meta property="og:description" content="Given an array nums, rotate the array to the right by k steps. Cyclic ReplacementIf n is some multiplies of k, we need to track each cycle. &#96;&#96;&#96;java n &#x3D; nums.length(); k &#x3D; k % n; &#x2F;&#x2F; a conmmon trick use">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-05-27T11:43:04.000Z">
-<meta property="article:modified_time" content="2025-05-28T14:01:15.221Z">
+<meta property="article:published_time" content="2025-05-30T07:57:04.000Z">
+<meta property="article:modified_time" content="2025-05-30T08:37:52.121Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -73,14 +73,14 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-Java-studynode-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Leetcode-189" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/05/27/Java-studynode-1/" class="article-date">
-  <time class="dt-published" datetime="2025-05-27T11:43:04.000Z" itemprop="datePublished">2025-05-27</time>
+    <a href="/2025/05/30/Leetcode-189/" class="article-date">
+  <time class="dt-published" datetime="2025-05-30T07:57:04.000Z" itemprop="datePublished">2025-05-30</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
   </div>
 
   </div>
@@ -91,7 +91,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Java studynode(1)
+      Leetcode 189
     </h1>
   
 
@@ -99,12 +99,54 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>This is my first Hexo blog!</p>
+        <p>Given an array nums, rotate the array to the right by k steps.</p>
+<p><span style = "font-size: 20px"><b>Cyclic Replacement</b></span><br>If n is some multiplies of k, we need to track each cycle.</p>
+<pre>```java
+n = nums.length();
+k = k % n; // a conmmon trick used when dealing with cyclic array
+int count = 0;
 
+for(int start = 0; count < n; start++){
+    int current = start;
+    int prev = nums[start];
+
+    do{
+        int next = (current + k) % n;
+        int temp = nums[next];
+        nums[next] = prev;
+        prev = temp;
+        current = next;
+
+        count ++;
+
+    }while(current != start)
+
+}
+</pre>
+
+<p><span style = "font-size: 20px">Reverse Method<b></span></b></p>
+<pre>
+public void rotate(int[] nums, int k){
+    int n = nums.length;
+    k = k%n;
+
+    reverse(nums,0,n);
+    reverse(nums,0,k);
+    reverse(nums,n,k);
+}
+
+private void reverse(int[] nums, int start, int end){
+    for(int i = 0; i < (end - start)/2; i++){
+        temp = nums[start+i];
+        nums[start+i] = nums[end-1-i];
+        nums[end-1-i] = temp;
+    }
+}
+</pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/27/Java-studynode-1/" data-id="cmbajw6yx0000lllghqlc58yd" data-title="Java studynode(1)" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/30/Leetcode-189/" data-id="cmbajw6z00003lllg1aot5eba" data-title="Leetcode 189" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -114,19 +156,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2025/05/28/Leetcode-88/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Leetcode 88
-        
-      </div>
-    </a>
   
-  
-    <a href="/2025/05/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2025/05/29/Leetcode-169/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">Leetcode 169</div>
     </a>
   
 </nav>

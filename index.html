@@ -71,6 +71,91 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Leetcode-189" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/05/30/Leetcode-189/" class="article-date">
+  <time class="dt-published" datetime="2025-05-30T07:57:04.000Z" itemprop="datePublished">2025-05-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/05/30/Leetcode-189/">Leetcode 189</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Given an array nums, rotate the array to the right by k steps.</p>
+<p><span style = "font-size: 20px"><b>Cyclic Replacement</b></span><br>If n is some multiplies of k, we need to track each cycle.</p>
+<pre>```java
+n = nums.length();
+k = k % n; // a conmmon trick used when dealing with cyclic array
+int count = 0;
+
+for(int start = 0; count < n; start++){
+    int current = start;
+    int prev = nums[start];
+
+    do{
+        int next = (current + k) % n;
+        int temp = nums[next];
+        nums[next] = prev;
+        prev = temp;
+        current = next;
+
+        count ++;
+
+    }while(current != start)
+
+}
+</pre>
+
+<p><span style = "font-size: 20px">Reverse Method<b></span></b></p>
+<pre>
+public void rotate(int[] nums, int k){
+    int n = nums.length;
+    k = k%n;
+
+    reverse(nums,0,n);
+    reverse(nums,0,k);
+    reverse(nums,n,k);
+}
+
+private void reverse(int[] nums, int start, int end){
+    for(int i = 0; i < (end - start)/2; i++){
+        temp = nums[start+i];
+        nums[start+i] = nums[end-1-i];
+        nums[end-1-i] = temp;
+    }
+}
+</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/05/30/Leetcode-189/" data-id="cmbajw6z00003lllg1aot5eba" data-title="Leetcode 189" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Leetcode-169" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/05/29/Leetcode-169/" class="article-date">
@@ -125,7 +210,7 @@ for(int num : nums){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/29/Leetcode-169/" data-id="cmbadbi8k000168lgcfjxe6zv" data-title="Leetcode 169" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/29/Leetcode-169/" data-id="cmbajw6yz0001lllgers4ha9r" data-title="Leetcode 169" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -197,7 +282,7 @@ while(p2 >= 0){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/28/Leetcode-88/" data-id="cmbadbi8l000368lgfzej31ui" data-title="Leetcode 88" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/28/Leetcode-88/" data-id="cmbajw6z10005lllgc8cra1jg" data-title="Leetcode 88" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -242,7 +327,7 @@ while(p2 >= 0){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/27/Java-studynode-1/" data-id="cmbadbi8i000068lg5ptbgp68" data-title="Java studynode(1)" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/27/Java-studynode-1/" data-id="cmbajw6yx0000lllghqlc58yd" data-title="Java studynode(1)" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -293,7 +378,7 @@ while(p2 >= 0){
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/27/hello-world/" data-id="cmbadbi8m000568lg97ejbz7c" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/27/hello-world/" data-id="cmbajw6z10006lllg0ui6992j" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -355,6 +440,10 @@ while(p2 >= 0){
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2025/05/30/Leetcode-189/">Leetcode 189</a>
+          </li>
         
           <li>
             <a href="/2025/05/29/Leetcode-169/">Leetcode 169</a>
